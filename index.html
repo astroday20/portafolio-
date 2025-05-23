@@ -1,0 +1,284 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Dayana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<script>
+  function toggleLike(heart) {
+    heart.classList.toggle("liked");
+    const counter = heart.nextElementSibling;
+    let count = parseInt(counter.textContent);
+    counter.textContent = heart.classList.contains("liked") ? count + 1 : count - 1;
+  }
+
+  function setRating(star) {
+    const stars = star.parentElement.children;
+    let index = Array.from(stars).indexOf(star);
+    for (let i = 0; i < stars.length; i++) {
+      stars[i].classList.toggle("active", i <= index);
+    }
+    star.parentElement.dataset.rating = index + 1;
+  }
+
+  function hoverStar(star) {
+    const stars = star.parentElement.children;
+    let index = Array.from(stars).indexOf(star);
+    for (let i = 0; i < stars.length; i++) {
+      stars[i].style.color = i <= index ? 'gold' : '#ccc';
+    }
+  }
+
+  function resetStars(container) {
+    const rating = container.dataset.rating || 0;
+    const stars = container.children;
+    for (let i = 0; i < stars.length; i++) {
+      stars[i].style.color = i < rating ? 'gold' : '#ccc';
+    }
+  }
+
+  function enviarComentario(button) {
+    const textarea = button.previousElementSibling;
+    const contenedor = button.nextElementSibling;
+    if (textarea.value.trim() !== "") {
+      const comentario = document.createElement("p");
+      comentario.textContent = textarea.value;
+      contenedor.appendChild(comentario);
+      textarea.value = "";
+    }
+  }
+</script>
+
+<body>
+
+<header class="portada">
+    <h1>Dayana Photography</h1>
+    <p>"sonrisas compartida, momentos capturados, recuerdos que perduran"</strong></p>
+</header>
+  <nav>
+    <ul>
+      <li><a href="#fotos-frias">Fotos Frías</a></li>
+      <li><a href="#fotos-calidas">Fotos Cálidas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Publicidades -->
+  <section id="publicidad">
+    <h2>Publicidad</h2>
+    <div class="publicidades-contenedor">
+      <div class="publicidad-item">
+        <p>🎥 Curso gratuito de fotografía</p>
+        <iframe width="100%" height="150" src="https://www.youtube.com/embed/Jj2RAfdc0hk" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="publicidad-item">
+        <p>📸 Mejora tu técnica de cámara</p>
+        <iframe width="100%" height="150" src="https://www.youtube.com/embed/XPm7BkGZaWc" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="publicidad-item">
+        <p>🎬 Tutorial de edición de fotos</p>
+        <iframe width="100%" height="150" src="https://www.youtube.com/embed/2N1LtHMtqCo" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fotos Frías -->
+  <section id="fotos-frias" class="galeria-seccion">
+    <h2>Fotos Frías</h2>
+    <div class="galeria-contenedor">
+      <div class="foto-con-interaccion">
+        <img src="fotos/foto1.jpeg" alt="Foto fría" onclick="abrirModal(this)" />
+        <div class="acciones">
+          <span class="corazon" onclick="toggleLike(this)">❤️</span>
+          <span class="contador">0</span>
+        </div>
+        <div class="estrellas" onmouseleave="resetStars(this)">
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+        </div>
+        <div class="comentarios">
+          <textarea placeholder="Escribe tu comentario..."></textarea>
+          <button onclick="enviarComentario(this)">Comentar</button>
+          <div class="lista-comentarios"></div>
+        </div>
+      </div>
+      <div class="foto-con-interaccion">
+        <img src="fotos/foto2.jpeg" alt="Foto fría" onclick="abrirModal(this)" />
+        <div class="acciones">
+          <span class="corazon" onclick="toggleLike(this)">❤️</span>
+          <span class="contador">0</span>
+        </div>
+        <div class="estrellas" onmouseleave="resetStars(this)">
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+        </div>
+        <div class="comentarios">
+          <textarea placeholder="Escribe tu comentario..."></textarea>
+          <button onclick="enviarComentario(this)">Comentar</button>
+          <div class="lista-comentarios"></div>
+        </div>
+      </div>
+      <div class="foto-con-interaccion">
+        <img src="fotos/foto3.jpeg" alt="Foto fría" onclick="abrirModal(this)" />
+        <div class="acciones">
+          <span class="corazon" onclick="toggleLike(this)">❤️</span>
+          <span class="contador">0</span>
+        </div>
+        <div class="estrellas" onmouseleave="resetStars(this)">
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+        </div>
+        <div class="comentarios">
+          <textarea placeholder="Escribe tu comentario..."></textarea>
+          <button onclick="enviarComentario(this)">Comentar</button>
+          <div class="lista-comentarios"></div>
+        <div></div>
+
+    </div>
+  </section>
+
+  <!-- Fotos Cálidas -->
+  <section id="fotos-calidas" class="galeria-seccion">
+    <h2>Fotos Cálidas</h2>
+    <div class="galeria-contenedor">
+      <div class="foto-con-interaccion">
+        <img src="fotos/fotoc1.jpeg" alt="Foto cálida" onclick="abrirModal(this)" />
+        <div class="acciones">
+          <span class="corazon" onclick="toggleLike(this)">❤️</span>
+          <span class="contador">0</span>
+        </div>
+        <div class="estrellas" onmouseleave="resetStars(this)">
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+        </div>
+        <div class="comentarios">
+          <textarea placeholder="Escribe tu comentario..."></textarea>
+          <button onclick="enviarComentario(this)">Comentar</button>
+          <div class="lista-comentarios"></div>
+        </div>
+      </div>
+      <div class="foto-con-interaccion">
+        <img src="fotos/fotoc2.jpeg" alt="Foto cálida" onclick="abrirModal(this)" />
+        <div class="acciones">
+          <span class="corazon" onclick="toggleLike(this)">❤️</span>
+          <span class="contador">0</span>
+        </div>
+        <div class="estrellas" onmouseleave="resetStars(this)">
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+        </div>
+        <div class="comentarios">
+          <textarea placeholder="Escribe tu comentario..."></textarea>
+          <button onclick="enviarComentario(this)">Comentar</button>
+          <div class="lista-comentarios"></div>
+        </div>
+      </div>
+      <div class="foto-con-interaccion">
+        <img src="fotos/fotoc3.jpeg" alt="Foto cálida" onclick="abrirModal(this)" />
+        <div class="acciones">
+          <span class="corazon" onclick="toggleLike(this)">❤️</span>
+          <span class="contador">0</span>
+        </div>
+        <div class="estrellas" onmouseleave="resetStars(this)">
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+          <span onclick="setRating(this)" onmouseover="hoverStar(this)">★</span>
+        </div>
+        <div class="comentarios">
+          <textarea placeholder="Escribe tu comentario..."></textarea>
+          <button onclick="enviarComentario(this)">Comentar</button>
+          <div class="lista-comentarios"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>📸 Instagram: <a href="https://www.instagram.com/day.jmd" target="_blank">@day.jmd</a></p>
+    <p>📧 Email: <a href="mailto:dayana@example.com">dayana@example.com</a></p>
+    <p>📱 Teléfono: <a href="tel:+525636695913">+52 5636 695913</a></p>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal" onclick="cerrarModal()">
+    <span class="cerrar">&times;</span>
+    <img id="modal-img" />
+  </div>
+
+  <script>
+    function toggleLike(heart) {
+      heart.classList.toggle("liked");
+      const counter = heart.nextElementSibling;
+      let count = parseInt(counter.textContent);
+      counter.textContent = heart.classList.contains("liked") ? count + 1 : count - 1;
+    }
+
+    function setRating(star) {
+      const stars = star.parentElement.children;
+      let index = Array.from(stars).indexOf(star);
+      for (let i = 0; i < stars.length; i++) {
+        stars[i].classList.toggle("active", i <= index);
+      }
+      star.parentElement.dataset.rating = index + 1;
+    }
+
+    function hoverStar(star) {
+      const stars = star.parentElement.children;
+      let index = Array.from(stars).indexOf(star);
+      for (let i = 0; i < stars.length; i++) {
+        stars[i].style.color = i <= index ? "gold" : "#ccc";
+      }
+    }
+
+    function resetStars(container) {
+      const rating = container.dataset.rating || 0;
+      const stars = container.children;
+      for (let i = 0; i < stars.length; i++) {
+        stars[i].style.color = i < rating ? "gold" : "#ccc";
+      }
+    }
+
+    function enviarComentario(button) {
+      const textarea = button.previousElementSibling;
+      const contenedor = button.nextElementSibling;
+      if (textarea.value.trim() !== "") {
+        const p = document.createElement("p");
+        p.textContent = textarea.value;
+        contenedor.appendChild(p);
+        textarea.value = "";
+      }
+    }
+
+    function abrirModal(img) {
+      document.getElementById("modal-img").src = img.src;
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function cerrarModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>

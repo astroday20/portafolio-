@@ -1,0 +1,232 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #e0dcdc, #f8d9e9); /* Gris y rosa pastel */
+    color: #333;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Estilos de la portada */
+.portada {
+    background-image: url(fotos/fotop.jpeg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 150px 20px;
+    color: white;
+}
+
+.portada h1 {
+    font-size: 4em;
+    font-family: 'Great Vibes', cursive;
+    color: black;
+    text-shadow: 2px 2px 4px white;
+}
+
+.portada p {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Estilos de la navegación */
+.nav {
+    background-color: #f8d9e9;
+    text-align: center;
+    padding: 10px 0;
+}
+h1,
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 20px 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #444;
+}
+
+.galeria-seccion {
+  margin-bottom: 50px;
+}
+
+.galeria-contenedor {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.foto-con-interaccion {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.foto-con-interaccion img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.foto-con-interaccion img:hover {
+  transform: scale(1.03);
+}
+
+.acciones {
+  font-size: 1.5em;
+  margin-top: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.corazon.liked {
+  color: red;
+}
+
+.estrellas {
+  margin: 5px 0;
+}
+
+.estrellas span {
+  font-size: 1.4em;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.estrellas span.active {
+  color: gold;
+}
+
+.comentarios textarea {
+  width: 100%;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+  resize: none;
+}
+
+.comentarios button {
+  padding: 6px 10px;
+  background-color: #f8d9e9;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.lista-comentarios p {
+  background-color: #f0f0f0;
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+#publicidad {
+  background: #fff;
+  padding: 20px;
+  margin: 30px auto 50px;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.publicidades-contenedor {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.publicidad-item {
+  background: #f8d9e9;
+  padding: 10px;
+  border-radius: 8px;
+  flex: 1 1 30%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.publicidad-item p {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+#modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.cerrar {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#contacto {
+  background-color: #f8d9e9;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contacto h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#contacto p {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+#contacto a {
+  color: #333;
+  text-decoration: none;
+}
